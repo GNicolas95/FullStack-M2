@@ -1,8 +1,7 @@
-(function () {
-  window.EventEmitter = EventEmitter;
+
 
   // our EventEmitter constructor function
-  function EventEmitter() {
+  export default function EventEmitter() { //ES6 front 
     this.subscribers = {};
   }
 
@@ -37,4 +36,5 @@
       listener.apply(null, remainingArgs);
     });
   };
-})();
+
+  //module.exports = {EventEmitter}; // CommonJS 

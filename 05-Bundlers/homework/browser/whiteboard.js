@@ -1,5 +1,8 @@
-(function () {
-  window.whiteboard = new window.EventEmitter();
+  //const EventEmitter = require("./event-emitter")// CommonJS back
+  import EventEmitter from "./event-emitter"
+
+  export const whiteboard = new EventEmitter();
+  // exports.whiteboard = new EventEmitter();// CommonJS
 
   // Ultimately, the color of our stroke;
   var color;
@@ -105,5 +108,6 @@
     if (shouldBroadcast) {
       whiteboard.emit("draw", start, end, strokeColor);
     }
-  };
-})();
+  }
+
+  //module.exports = {whiteboard};// CommonJS
